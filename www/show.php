@@ -7,6 +7,7 @@ if (isset($_GET["id"])) {
   $id = $_GET["id"];
 
   $pdo = getPDO();
+  //query
   $sta = $pdo->query("select * from posts where id = '$id'");
   $row = $sta->fetch();
 

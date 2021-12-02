@@ -3,6 +3,7 @@ require_once "utils.php";
 
 if (isset($_POST["title"])) {
   $pdo = getPDO();
+  // query
   $sta = $pdo->query(
     "insert into posts (title, summary, body)"
       . " values "
@@ -12,6 +13,7 @@ if (isset($_POST["title"])) {
   );
 
   $id = $pdo->lastInsertId();
+  //erreur directement dans la url
   redirect("?page=show&id=$id");
 }
 
